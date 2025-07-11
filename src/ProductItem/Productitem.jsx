@@ -9,7 +9,7 @@ const Productitem = ({ id, name, image, price, description }) => {
   const [isAdding, setIsAdding] = useState(false);
 
   const handleAddToCart = (e) => {
-    e.stopPropagation(); // prevent navigation when clicking "Add to Cart"
+    e.stopPropagation(); 
     setIsAdding(true);
     addToCart(String(id));
     setTimeout(() => {
@@ -26,7 +26,6 @@ const Productitem = ({ id, name, image, price, description }) => {
           : "bg-white border-gray-100 hover:shadow-yellow-200"}
         hover:-translate-y-1 hover:scale-[1.02] p-3 sm:p-5 min-h-[250px] sm:min-h-[400px]`}
     >
-      {/* Product Image */}
       <div
         className={`w-full flex items-center justify-center rounded-xl overflow-hidden mb-2 sm:mb-4 ${theme === "dark" ? "bg-[#23232a]" : "bg-gray-50"}`}
       >
@@ -40,7 +39,6 @@ const Productitem = ({ id, name, image, price, description }) => {
         />
       </div>
 
-      {/* Product Info */}
       <div className="flex-1 w-full flex flex-col items-center text-center">
         <h2
           className={`text-base sm:text-lg font-semibold mb-1 ${theme === "dark" ? "text-white" : "text-gray-800"}`}
@@ -59,7 +57,6 @@ const Productitem = ({ id, name, image, price, description }) => {
         </p>
       </div>
 
-      {/* Add to Cart Button */}
       <button
         onClick={handleAddToCart}
         disabled={isAdding}

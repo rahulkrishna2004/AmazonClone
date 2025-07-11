@@ -30,7 +30,6 @@ const ProductCard = ({ product }) => {
           : "bg-white text-gray-900 border-gray-200 hover:shadow-yellow-200"
         }`}
     >
-      {/* Image Section */}
       <div
         className={`w-full h-32 sm:h-40 flex items-center justify-center rounded-lg mb-4 overflow-hidden
           ${isDark ? "bg-[#2a2a2a]" : "bg-gray-50"}`}
@@ -45,7 +44,6 @@ const ProductCard = ({ product }) => {
         />
       </div>
 
-      {/* Product Info */}
       <div className="w-full text-center">
         <h3 className="font-semibold text-sm sm:text-lg mb-1 truncate">{name}</h3>
         <p className={`text-xs sm:text-sm line-clamp-2 ${isDark ? "text-gray-400" : "text-gray-600"}`}>
@@ -56,7 +54,6 @@ const ProductCard = ({ product }) => {
         </p>
       </div>
 
-      {/* Add to Cart Button */}
       <button
         onClick={handleAddToCart}
         disabled={isAdding}

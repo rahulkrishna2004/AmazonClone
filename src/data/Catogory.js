@@ -1,4 +1,3 @@
-// Category image imports (from src/assets/categories/)
 import mobiles from "../assets/categories/mobiles.jpg";
 import electronics from "../assets/categories/electronics.jpg";
 import grocery from "../assets/categories/grocery.jpg";
@@ -15,7 +14,6 @@ import watches from "../assets/categories/watches.jpg";
 import music from "../assets/categories/music.jpg";
 import jewellery from "../assets/categories/jewellery.jpg";
 
-// Categories array
 const categories = [
   {
     name: "Mobiles",
@@ -28,38 +26,31 @@ const categories = [
   {
     name: "Shoes",
     image: grocery,
-    // link: "https://www.amazon.in/groceries/b?node=1638561031",
   },
   {
     name: "Cloths",
     image: home,
-    // link: "https://www.amazon.in/home-kitchen/b?node=976442031",
   },
   {
     name: "Beauty",
     image: beauty,
-    // link: "https://www.amazon.in/beauty/b?node=1355016031",
   },
   {
     name: "Appliances",
     image: appliances,
-    // link: "https://www.amazon.in/appliances/b?node=5122348031",
   },
   {
     name: "Books",
     image: books,
-    // link: "https://www.amazon.in/books/b?node=976389031",
   },
   {
     name: "Toys",
     image: toys,
-    // link: "https://www.amazon.in/toys-games/b?node=1350380031",
   },
 
   {
     name: "Computers",
     image: computers,
-    // link: "https://www.amazon.in/computers-accessories/b?node=976392031",
   },
 ,
   {
@@ -77,7 +68,6 @@ const categories = [
     {
     name: "Sports & Fitness",
     image: sports,
-    // link: "https://www.amazon.in/sports-fitness/b?node=1984443031",
   } 
 ];
 

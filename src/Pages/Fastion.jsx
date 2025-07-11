@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../Context/ThemeContext"; // ✅ Adjust the path as needed
+import { ThemeContext } from "../Context/ThemeContext"; 
 
 const Fastion = () => {
   const { theme } = useContext(ThemeContext);

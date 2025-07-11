@@ -20,7 +20,6 @@ const LoginPopUp = ({ setShowLogin }) => {
       >
         <form className="space-y-5 border-2 border-yellow-400 p-4 rounded-md">
 
-          {/* Title + Close Icon */}
           <div className="flex justify-between items-center mb-3">
             <h2 className="text-xl font-bold text-yellow-500">{currState}</h2>
             <img
@@ -31,7 +30,6 @@ const LoginPopUp = ({ setShowLogin }) => {
             />
           </div>
 
-          {/* Input Fields */}
           <div className="space-y-3">
             {currState === "Sign Up" && (
               <input
@@ -61,7 +59,6 @@ const LoginPopUp = ({ setShowLogin }) => {
             />
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 rounded-md transition"
@@ -69,13 +66,11 @@ const LoginPopUp = ({ setShowLogin }) => {
             {currState === "Sign Up" ? "Create Account" : "Login"}
           </button>
 
-          {/* Terms */}
           <div className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
             <input type="checkbox" required className="mt-1" />
             <p>By continuing, I agree to the Terms of Use & Privacy Policy.</p>
           </div>
 
-          {/* Toggle State */}
           <div className="text-sm text-center">
             {currState === "Login" ? (
               <p>

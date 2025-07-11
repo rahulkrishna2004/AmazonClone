@@ -3,9 +3,6 @@ import { ThemeContext } from "../../Context/ThemeContext";
 
 import Banner from "./Banner";
 import ServiceIcons from "./ServiceIcons";
-import ExploreCategories from "../ExploreCategories/ExploreCategories";
-import ProductDisplay from "../../ProductDisplay/ProductDisplay";
-
 import { mobileAccessories } from "../../data/Accessories";
 import ProductCard from "../ProductCard";
 import SearchBar from "../SearchBar";
@@ -40,7 +37,6 @@ const Home = () => {
       <Banner />
       <ServiceIcons />
 
-      {/* Search and Product Listing */}
       <div className="px-4 md:px-10">
         <h1 className="text-3xl font-bold text-center my-6">Product Store</h1>
 

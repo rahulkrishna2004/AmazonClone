@@ -57,7 +57,9 @@ const BuyNow = () => {
             className={inputStyle}
           />
           {errors.firstName && (
-            <p className="text-sm text-red-600 mt-1">{errors.firstName.message}</p>
+            <p className="text-sm text-red-600 mt-1">
+              {errors.firstName.message}
+            </p>
           )}
         </div>
         <div>
@@ -68,7 +70,9 @@ const BuyNow = () => {
             className={inputStyle}
           />
           {errors.lastName && (
-            <p className="text-sm text-red-600 mt-1">{errors.lastName.message}</p>
+            <p className="text-sm text-red-600 mt-1">
+              {errors.lastName.message}
+            </p>
           )}
         </div>
       </div>
@@ -154,12 +158,13 @@ const BuyNow = () => {
             className={inputStyle}
           />
           {errors.country && (
-            <p className="text-sm text-red-600 mt-1">{errors.country.message}</p>
+            <p className="text-sm text-red-600 mt-1">
+              {errors.country.message}
+            </p>
           )}
         </div>
       </div>
 
-      {/* Phone */}
       <div>
         <input
           type="text"
@@ -178,7 +183,6 @@ const BuyNow = () => {
         )}
       </div>
 
-      {/* Total Section */}
       <div className="text-right mt-6 border-t pt-4 space-y-1">
         <div className="text-lg">
           Delivery Fee:{" "}
@@ -189,7 +193,6 @@ const BuyNow = () => {
         </h2>
       </div>
 
-      {/* Submit Button */}
       <button
         type="submit"
         className="w-full mt-4 px-6 py-2 rounded-md bg-yellow-400 text-black font-semibold text-sm sm:text-base 

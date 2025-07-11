@@ -12,7 +12,7 @@ describe("Categories Data", () => {
       expect(cat).toHaveProperty("image");
 
       expect(typeof cat.name).toBe("string");
-      expect(typeof cat.image).toBe("string"); // Expect image to be path string
+      expect(typeof cat.image).toBe("string"); 
       expect(cat.name.length).toBeGreaterThan(0);
       expect(cat.image.length).toBeGreaterThan(0);
     });
@@ -44,7 +44,7 @@ describe("Categories Data", () => {
       "Watches",
       "Musical Instruments",
       "Sports & Fitness",
-      "Jewellery" // in case you add later
+      "Jewellery" 
     ];
 
     categories.forEach((cat) => {

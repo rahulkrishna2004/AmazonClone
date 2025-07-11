@@ -9,7 +9,6 @@ const Navbar = ({ setShowLogin }) => {
   return (
     <div className="sticky top-0 z-50 bg-yellow-500 text-white px-2 sm:px-6 py-7 flex items-center justify-between gap-2 shadow-md h-[64px]">
       
-      {/* Logo */}
       <div className="flex items-center flex-shrink-0 mr-2">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
@@ -19,7 +18,6 @@ const Navbar = ({ setShowLogin }) => {
         />
       </div>
 
-      {/* Location */}
       <div className="hidden lg:flex items-center gap-1 cursor-pointer hover:opacity-80">
         <FaMapMarkerAlt className="text-xl text-black" />
         <div className="leading-tight text-xs">
@@ -28,7 +26,6 @@ const Navbar = ({ setShowLogin }) => {
         </div>
       </div>
 
-      {/* Search Bar */}
       <div className="flex w-32 xs:w-40 sm:w-64 md:w-[28rem] lg:w-[36rem] mx-2 flex-shrink">
         <input
           type="text"
@@ -40,10 +37,8 @@ const Navbar = ({ setShowLogin }) => {
         </button>
       </div>
 
-      {/* Right Side Actions */}
       <div className="flex items-center gap-2 sm:gap-4 ml-2">
         
-        {/* Cart */}
         <div
           className="flex items-center cursor-pointer hover:opacity-80"
           onClick={() => navigate("/cart")}
@@ -54,7 +49,6 @@ const Navbar = ({ setShowLogin }) => {
           </span>
         </div>
 
-        {/* Sign In */}
         <div
           className="hidden lg:flex flex-col items-center text-xs cursor-pointer hover:opacity-80"
           onClick={() => setShowLogin(true)}
@@ -64,7 +58,6 @@ const Navbar = ({ setShowLogin }) => {
           </div>
         </div>
 
-        {/* Theme Toggle */}
         <div className="ml-1 scale-90 sm:scale-100">
           <ThemeToggleButton />
         </div>

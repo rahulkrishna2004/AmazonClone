@@ -43,7 +43,7 @@ const helpTopics = [
 ];
 
 const AmazonHelpCenter = () => {
-  const { theme } = useContext(ThemeContext); // ✅ Light or dark
+  const { theme } = useContext(ThemeContext); 
 
   return (
     <div

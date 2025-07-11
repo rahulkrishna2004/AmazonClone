@@ -29,7 +29,6 @@ const ExploreCategories = ({ category, setCategory }) => {
         </h1>
 
         <div className="flex sm:block gap-2 sm:gap-0 pb-2 sm:pb-0">
-          {/* All Categories button */}
           <div
             onClick={() => setCategory("All")}
             className={`min-w-[110px] mt-10 sm:min-w-0 cursor-pointer border rounded-lg p-2 sm:p-3 text-center font-medium transition duration-300 ease-in-out hover:shadow-md ${
@@ -43,7 +42,6 @@ const ExploreCategories = ({ category, setCategory }) => {
             All Categories
           </div>
 
-          {/* Category List */}
           {categories.map((item, index) => {
             const isActive = category === item.name;
 
@@ -63,7 +61,6 @@ const ExploreCategories = ({ category, setCategory }) => {
                     : "border-gray-200"
                 }`}
               >
-                {/* Image bubble */}
                 <div
                   className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-gray-50 dark:bg-gray-800 border shadow-sm
     ${
@@ -81,7 +78,6 @@ const ExploreCategories = ({ category, setCategory }) => {
                   />
                 </div>
 
-                {/* Category text */}
                 <h2
                   className={`text-xs sm:text-sm font-medium ${
                     isActive

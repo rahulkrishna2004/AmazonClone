@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { describe, test, expect } from "vitest";
 import AmazonElectronics from "./AmazonElectronics";
-import { ThemeContext } from "../Context/ThemeContext"; // Adjust path as needed
+import { ThemeContext } from "../Context/ThemeContext"; 
 
 const renderWithTheme = (theme = "light") => {
   return render(
@@ -17,7 +17,7 @@ describe("AmazonElectronics Component", () => {
 
   test("renders all 5 products", () => {
     renderWithTheme();
-    const productTitles = screen.getAllByRole("heading", { level: 3 }); // h3 tags
+    const productTitles = screen.getAllByRole("heading", { level: 3 }); 
     expect(productTitles).toHaveLength(5);
   });
 

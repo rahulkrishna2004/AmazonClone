@@ -3,7 +3,6 @@ import { StoreContext } from "../Context/StoreContext";
 import Productitem from "../ProductItem/Productitem";
 import { ThemeContext } from "../Context/ThemeContext";
 import LoadingSpinner from "../Components/LoadingSpinner ";
-import Filter from "../Components/Filter/Filter";
 
 const ProductDisplay = ({ category = "All" }) => {
   const { allAccessories } = useContext(StoreContext);
@@ -24,7 +23,7 @@ const ProductDisplay = ({ category = "All" }) => {
 
   return (
     <div className="display px-2 sm:px-4 py-6 max-w-7xl mx-auto">
-      {/* <Filter/> */}
+
       <h1 className={`text-2xl font-bold mb-8 text-center tracking-tight
         ${theme === "dark" ? "text-yellow-400" : "text-gray-800"}`}>
         {category === "All" ? "All Products" : `${category} Products`}

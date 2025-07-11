@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../Context/ThemeContext"; // adjust path if needed
+import { ThemeContext } from "../Context/ThemeContext";
 
 const electronics = [
   {

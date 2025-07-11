@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../Context/ThemeContext"; // ✅ Adjust path if needed
+import { ThemeContext } from "../Context/ThemeContext";
 
 const BigBillionDays = () => {
-  const { theme } = useContext(ThemeContext); // "light" or "dark"
+  const { theme } = useContext(ThemeContext); 
 
   return (
     <div
