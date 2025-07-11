@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 const bannerData = [
   {
@@ -6,84 +6,99 @@ const bannerData = [
     image: "/banner1.jpg",
     link: "https://www.yamaha-motor-india.com/mt-15.html",
   },
-  {
-    id: 2,
-    image: "/banner2.jpg",
-    link: "https://www.oneplus.in/10r",
-  },
-  {
-    id: 3,
-    image: "/banner3.jpg",
-    link: "https://www.audi.in/",
-  },
-  {
-    id: 4,
-    image: "/banner4.jpg",
-    link: "https://www.zepto.in/",
-  },
-  {
-    id: 5,
-    image: "/banner5.jpg",
-    link: "https://www.rapido.bike/",
-  },
-  {
-    id: 6,
-    image: "/banner6.png",
-    link: "https://in.bookmyshow.com/",
-  },
-  {
-    id: 7,
-    image: "/banner7.jpg",
-    link: "https://www.zomato.com/",
-  },
+  { id: 6, image: "/banner6.png", link: "https://in.bookmyshow.com/" },
+  { id: 2, image: "/banner2.jpg", link: "https://www.oneplus.in/10r" },
+  { id: 3, image: "/banner3.jpg", link: "https://www.audi.in/" },
+  { id: 5, image: "/banner5.jpg", link: "https://www.rapido.bike/" },
+  { id: 7, image: "/banner7.jpg", link: "https://www.zomato.com/" },
+  { id: 4, image: "/banner4.jpg", link: "https://www.zepto.in/" },
 ];
 
 export default function Banner() {
-  return (
-    <div className="mt-5 overflow-hidden relative">
-      <style>{`
-        @keyframes scrollBanner {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
-  }
+  const sliderRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  .scroll-animation {
-    animation: scrollBanner 40s linear infinite;
-  }
-
-  @media (max-width: 640px) {
-    .scroll-animation {
-      animation: scrollBanner 10s linear infinite;
+  const scrollToIndex = (index) => {
+    const slider = sliderRef.current;
+    if (slider) {
+      const width = slider.offsetWidth;
+      slider.scrollTo({ left: index * width, behavior: "smooth" });
+      setActiveIndex(index);
     }
-  }
-`}</style>
+  };
 
-      <div className="text-xl sm:text-3xl font-extrabold text-center text-gray-800 dark:text-zinc-400 px-4 py-3 mx-auto max-w-4xl ">
-        Trusted partners, endless choices,{" "}
+  const handleScroll = () => {
+    const slider = sliderRef.current;
+    if (slider) {
+      const width = slider.offsetWidth;
+      const index = Math.round(slider.scrollLeft / width);
+      setActiveIndex(index);
+    }
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextIndex = (activeIndex + 1) % bannerData.length;
+      scrollToIndex(nextIndex);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [activeIndex]);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+    slider.addEventListener("scroll", handleScroll);
+    return () => slider.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className="relative">
+      <div className="text-lg sm:text-2xl font-extrabold text-center text-gray-800 dark:text-zinc-400 px-4 py-2 mx-auto sm:max-w-5xl">
+        Trusted Partners, Endless Choices,{" "}
         <u>
           <span className="text-yellow-400">delivered by Amazon</span>
         </u>
       </div>
 
-      <div className="flex gap-6 px-2 py-4 w-fit scroll-animation">
-        {[...bannerData, ...bannerData].map((item, index) => (
-          <a
+      <div className="relative overflow-hidden">
+        <div
+          ref={sliderRef}
+          className="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory w-full h-[200px] sm:h-[500px] py-2 hide-scrollbar"
+        >
+          {bannerData.map((item) => (
+            <a
+              key={item.id}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 w-full h-full snap-center relative"
+            >
+              <img
+                src={item.image}
+                alt=""
+                className="w-full h-full object-contain transition duration-800"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-20" />
+              <span className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 sm:px-8 sm:py-4 px-4 py-2 rounded-full bg-yellow-400 text-black font-semibold text-sm shadow-lg">
+                Explore Now
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex justify-center sm:gap-2.5 gap-1.5 ">
+        {bannerData.map((_, index) => (
+          <button
             key={index}
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative min-w-[90vw] sm:min-w-[500px] h-[200px] sm:h-[250px] rounded-2xl overflow-hidden shadow-2xl border-2 border-transparent hover:border-yellow-400 transition-all duration-500 hover:scale-105 bg-black group"
-          >
-            <img
-              src={item.image}
-              alt=""
-              className="w-full h-full object-cover opacity-80 group-hover:opacity-90 transition duration-300"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
-            <span className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 px-4 py-1.5 rounded-full bg-yellow-400 text-black font-semibold text-xs sm:text-sm shadow-lg opacity-90 group-hover:opacity-100 transition">
-              Explore Now
-            </span>
-          </a>
+            onClick={() => scrollToIndex(index)}
+            className={`w-2 h-2 rounded-full transition-all ${
+              activeIndex === index
+                ? "bg-yellow-400 scale-125"
+                : "bg-gray-300 dark:bg-gray-600"
+            }`}
+          />
         ))}
       </div>
     </div>

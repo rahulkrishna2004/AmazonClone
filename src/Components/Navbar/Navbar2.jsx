@@ -3,14 +3,14 @@ import { NavLink } from "react-router-dom";
 
 const links = [
   { label: "Home", path: "/" },
-  { label: "Catogary", path: "/catogary" },
+  { label: "Category", path: "/catogary" },
   { label: "Up Coming Products", path: "/UpcomingExcitingProducts" },
   { label: "Electronics", path: "/electronics" },
   { label: "Mobiles", path: "/mobiles" },
   { label: "Amazon Prime", path: "/PrimeDayBanner" },
-  { label: "Today's Fastion", path: "/Fastion" },
+  { label: "Today's Fashion", path: "/Fastion" },
   { label: "Big Billion Days", path: "/BigBillionDays" },
-  { label: "Megdonels", path: "/Megdonels" },
+  { label: "McDonald’s", path: "/Megdonels" },
   { label: "Today's Deals", path: "/todays-deals" },
   { label: "Customer Service", path: "/customer-service" },
 

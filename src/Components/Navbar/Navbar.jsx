@@ -9,11 +9,11 @@ const Navbar = ({ setShowLogin }) => {
   return (
     <div className="sticky top-0 z-50 bg-yellow-500 text-white px-2 sm:px-6 py-7 flex items-center justify-between gap-2 shadow-md h-[64px]">
       
-      <div className="flex items-center flex-shrink-0 mr-2">
+      <div className="flex items-center flex-shrink-0  sm:ml-20 ml-5 mt-2">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
           alt="Amazon"
-          className="h-6 sm:h-8 w-auto object-contain cursor-pointer transition-transform duration-200 hover:scale-105"
+          className="  h-6 sm:h-8 w-auto object-contain cursor-pointer transition-transform duration-200 hover:scale-105"
           onClick={() => navigate("/")}
         />
       </div>
@@ -58,7 +58,7 @@ const Navbar = ({ setShowLogin }) => {
           </div>
         </div>
 
-        <div className="ml-1 scale-90 sm:scale-100">
+        <div className="ml-1 scale-90 sm:scale-100 sm:mr-20 mr-5 ">
           <ThemeToggleButton />
         </div>
       </div>
