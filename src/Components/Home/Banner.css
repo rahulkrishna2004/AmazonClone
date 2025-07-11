@@ -1,0 +1,26 @@
+.banner-track {
+  display: flex;
+  animation: scrollBanner 40s linear infinite;
+  width: fit-content;
+  gap: 1rem;
+}
+
+.banner-slide {
+  flex-shrink: 0;
+}
+
+/* Scrolling animation */
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(1%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .banner-track {
+    animation-duration: s;
+  }
+}
