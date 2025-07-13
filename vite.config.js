@@ -9,8 +9,8 @@ export default defineConfig({
     tailwindcss(),
   ],
   test: {
-    globals: true,        // ✅ Enables describe/test without importing
-    environment: 'jsdom', // ✅ Required for DOM-related testing (React)
-    setupFiles: [],       // Optional: add setup files here if needed
+    globals: true,        
+    environment: 'jsdom', 
+    setupFiles: [],      
   },
 });
